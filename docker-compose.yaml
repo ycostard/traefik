@@ -9,7 +9,7 @@ services:
       - 443:443
       - 80:80
     volumes:
-      - "./traefik/traefik.toml:/etc/traefik/traefik.toml"
-      - "./traefik/dynamic:/root/dynamic"
+      - "./traefik.toml:/etc/traefik/traefik.toml"
+      - ./dynamic:/root/dynamic
       - "/root/cert:/root/cert"
-      - "./traefik/log:/var/log/"
+      - "./log:/var/log/"
