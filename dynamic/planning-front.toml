@@ -1,0 +1,10 @@
+[http]
+  [http.routers]
+     [http.routers.planning-front]
+      rule = "Host(`yohann-costrard`)"
+      service = "planning-front-service"
+      entryPoints = ["websecure"]
+  [http.services]
+     [http.services.planning-front-service.loadBalancer]
+       [[http.services.planning-front-service.loadBalancer.servers]]
+        url = "http://87.106.118.83:8080"

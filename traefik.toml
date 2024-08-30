@@ -1,0 +1,33 @@
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+ 
+  [entryPoints.websecure]
+    address = ":443"
+      [entryPoints.websecure.http.tls]
+[providers]
+  [providers.file]
+    directory = "/root/dynamic"
+    watch = true
+
+[accessLog]
+   filePath = "/var/log/traefik-access.log"
+   format = "json"
+
+  [accessLog.fields]
+    defaultMode = "keep"
+
+    [accessLog.fields.names]
+      "ClientUsername" = "drop"
+      "RequestLine" = "keep"
+      "Overhead" = "drop"
+      "RetryAttempts" = "drop"
+      "TLSCipher" = "drop"
+      "GzipRatio" = "drop"
+      "RequestCount" = "drop"
+      "DownstreamStatus" = "keep"
+      "OriginStatusLine" = "keep"
+      "OriginContentSize" = "drop"
+      "OriginDuration" = "drop"
+      "RequestContentSize" = "drop"
+      "RequestScheme" = "drop"

@@ -1,0 +1,9 @@
+./log/traefik-access.log {
+        daily
+        size 1M
+        notifempty
+        rotate 3
+        postrotate
+           systemctl restart traefik
+        endscript
+}

@@ -1,0 +1,3 @@
+[[tls.certificates]]
+  certFile = "/root/cert/yohann-costrard.fr_ssl_certificate.cer"
+  keyFile = "/root/cert/_.yohann-costrard.fr_private_key.key"
