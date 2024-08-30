@@ -7,4 +7,4 @@
   [http.services]
      [http.services.planning-front-service.loadBalancer]
        [[http.services.planning-front-service.loadBalancer.servers]]
-        url = "http://87.106.118.83:8080"
+        url = "http://planning-front:8080"

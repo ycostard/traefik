@@ -5,6 +5,8 @@ services:
     image: traefik:3.1.2
     restart: always
     container_name: traefik
+    networks:
+      - traefik-net
     ports:
       - 443:443
       - 80:80
@@ -13,3 +15,6 @@ services:
       - ./dynamic:/root/dynamic
       - "/root/cert:/root/cert"
       - "./log:/var/log/"
+
+networks:
+  traefik-net:
